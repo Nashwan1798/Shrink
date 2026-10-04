@@ -1,2 +1,0 @@
-# Shrink
-Creating a shrink
