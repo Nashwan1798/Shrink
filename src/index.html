@@ -1,10 +1,34 @@
-<body>
-  <h1>it works!</h1>
-  <style>
-    body { background: black; color: white; font-family: sans-serif; }
-  </style>
-  <script>
-    const title = document.querySelector("h1");
-    title.onclick = () => (title.textContent = "you clicked it");
-  </script>
+<body> 
+    <canvas id="DinosaurChess" width="300" height="250"></canvas>
+
+    <script>
+        const canvas = document.getElementById("DinosaurChess");
+        const ctx = canvas.getContext("2d");
+        let x = 0
+        let y = 100
+        ctx.fillRect(x, y, 20, 20);
+        document.addEventListener("keyup", ({key}) => {
+        if (key === ' ') {
+            y = 70;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(x, y, 20, 20);
+            setTimeout(myFunction, 300);
+            function myFunction() {
+                 y = 100;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(x, y, 20, 20);
+            }
+        }
+         if (key === 'ArrowRight') {
+            x = x+10;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(x, y, 20, 20);
+            }
+        if (key === 'ArrowLeft') {
+            x = x-10;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(x, y, 20, 20);
+            }
+    });
+    </script>
 </body>
