@@ -1,17 +1,24 @@
 <body> 
-    <canvas id="DinosaurChess" width="300" height="250"></canvas>
+    <canvas id="SquareMove" width="300" height="250"></canvas>
 
     <script>
-        const canvas = document.getElementById("DinosaurChess");
+        const canvas = document.getElementById("SquareMove");
         const ctx = canvas.getContext("2d");
         let x = 0
         let y = 100
+
+        <!-- draws initial rectangle -->
         ctx.fillRect(x, y, 20, 20);
+
+        <!-- listens to keys released -->
         document.addEventListener("keyup", ({key}) => {
         if (key === ' ') {
+            <!-- changes y, clears, gets drawn up -->
             y = 70;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillRect(x, y, 20, 20);
+
+            <!-- Waits 300 ms before drawing it back down -->
             setTimeout(myFunction, 300);
             function myFunction() {
                  y = 100;
