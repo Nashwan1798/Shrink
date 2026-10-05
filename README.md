@@ -1,4 +1,4 @@
-# Moveit
+# SquareMove
 
 Well, it is a very simple program. it responds to keys and moves!
 
